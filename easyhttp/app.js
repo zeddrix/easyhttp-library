@@ -25,9 +25,30 @@ const data = {
 };
 
 // Create Post
-http.post(
-	'https://jsonplaceholder.typicode.com/posts',
-	data,
+// http.post(
+// 	'https://jsonplaceholder.typicode.com/posts',
+// 	data,
+// 	function (err, post) {
+// 		if (err) {
+// 			console.log(err);
+// 		} else {
+// 			console.log(post);
+// 		}
+// 	}
+// );
+
+const postId = 5;
+
+// Edited post
+const editPost = {
+	title: "Zedd's Edits For This Post",
+	body: `Zedd has made edits for this post, which has the id '${postId}'`,
+};
+
+// Update Post
+http.put(
+	`https://jsonplaceholder.typicode.com/posts/${postId}`,
+	editPost,
 	function (err, post) {
 		if (err) {
 			console.log(err);
