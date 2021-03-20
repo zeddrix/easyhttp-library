@@ -10,10 +10,29 @@ const http = new easyHTTP();
 // });
 
 // Get Single Post
-http.get('https://jsonplaceholder.typicode.com/posts/1', function (err, post) {
-	if (err) {
-		console.log(err);
-	} else {
-		console.log(post);
+// http.get('https://jsonplaceholder.typicode.com/posts/1', function (err, post) {
+// 	if (err) {
+// 		console.log(err);
+// 	} else {
+// 		console.log(post);
+// 	}
+// });
+
+// Create Data
+const data = {
+	title: "Zedd's Post",
+	body: "This is Zedd's custom post",
+};
+
+// Create Post
+http.post(
+	'https://jsonplaceholder.typicode.com/posts',
+	data,
+	function (err, post) {
+		if (err) {
+			console.log(err);
+		} else {
+			console.log(post);
+		}
 	}
-});
+);
